@@ -1,5 +1,6 @@
 *
 !*.yaml
+!*.xml
 !.gitignore
 *.conf
 *.txt
