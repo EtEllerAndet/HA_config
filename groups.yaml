@@ -1,0 +1,39 @@
+  default_view:
+    view: yes
+    icon: mdi:home 
+    entities:
+      - group.stue
+      - group.sovevaerelse
+      - group.rpi
+  kontakter:
+  
+    name: Kontakter
+    view: yes
+    entities:
+      - group.all_switches
+
+  grafer:
+    name: Grafer
+    view: yes
+    icon: mdi:chart-line
+    entities:
+      - history_graph.temperatur
+      - history_graph.fugtighed
+  stue:
+    name: Stue
+    entities:
+      - switch.everspring_an180_plugin_onoff_module_switch
+      - switch.everspring_an179_in_wall_onoff_module_switch_2
+      - history_graph.temperatur
+
+  sovevaerelse:
+    name: Soveværelse
+    entities:
+      - switch.everspring_an179_in_wall_onoff_module_switch
+
+  rpi:
+    name: Rasberry Pi Performance 
+    view: yes
+    icon: mdi:raspberrypi
+    entities:
+      - history_graph.Rasberry_Pi

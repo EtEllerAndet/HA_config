@@ -1,0 +1,144 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Hjem
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Copenhagen
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  base_url: !secret http_url
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  #api_password: !secret http_password
+  ip_ban_enabled: True 
+  login_attempts_threshold: 15
+
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+  ignore:
+    - plex_mediaserver
+    - google_cast
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+history_graph:
+  graf_temperatur:
+    name: Temperatur
+    entities:
+      - sensor.aeotec_zw100_multisensor_6_temperature
+      - sensor.temperature_158d0002327f41
+      - sensor.temperature_158d0002327fc1
+      - sensor.temperature_158d000237e716
+      - sensor.temperature_158d00023878da
+      - sensor.temperature_158d0002387904
+    hours_to_show: 168
+    refresh: 60
+
+  graf_fugtighed:
+    name: Fugtighed
+    entities:
+      - sensor.aeotec_zw100_multisensor_6_relative_humidity
+      - sensor.humidity_158d0002327f41
+      - sensor.humidity_158d0002327fc1
+      - sensor.humidity_158d000237e716
+      - sensor.humidity_158d00023878da
+      - sensor.humidity_158d0002387904
+    hours_to_show: 168
+    refresh: 60
+
+  graf_rpi:
+    name: Rasberry Pi
+    entities:
+      - sensor.processor_use
+      - sensor.memory_use_percent
+      - sensor.disk_use_percent_
+    hours_to_show: 168
+    refresh: 60
+
+# View all events in a logbook
+logbook:
+
+logger:
+  default: critical
+  logs:
+    homeassistant.components.history: debug
+    homeassistant.components.recorder: debug
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# IOS
+ios:
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - mac: !secret xiaomi_mac
+      key: !secret xiaomi_key
+      host: !secret xiaomi_ip
+# Weather prediction
+sensor:
+  - platform: yr
+  - platform: systemmonitor
+    resources:
+      - type: processor_use
+      - type: memory_use_percent
+      - type: disk_use_percent
+        arg: /
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+cloud:
+
+upnp:
+
+#database
+recorder:
+  db_url: !secret recorder_db_url
+
+# Z-wave
+zwave:
+  usb_path: /dev/ttyACM0
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
