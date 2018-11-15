@@ -27,7 +27,7 @@
 			</CommandClass>
 			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="5" innif="true">
 				<Instance index="1" />
-				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="C" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="22.8" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="C" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="22.7" />
 				<Value type="decimal" genre="user" instance="1" index="3" label="Luminance" units="lux" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="0" />
 				<Value type="decimal" genre="user" instance="1" index="5" label="Relative Humidity" units="%" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="44" />
 				<Value type="decimal" genre="user" instance="1" index="27" label="Ultraviolet" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="0" />
@@ -514,7 +514,7 @@
 			</CommandClass>
 			<CommandClass id="37" name="COMMAND_CLASS_SWITCH_BINARY" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
-				<Value type="bool" genre="user" instance="1" index="0" label="Switch" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
+				<Value type="bool" genre="user" instance="1" index="0" label="Switch" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True" />
 			</CommandClass>
 			<CommandClass id="39" name="COMMAND_CLASS_SWITCH_ALL" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -637,17 +637,16 @@
 				<Value type="bool" genre="user" instance="4" index="0" label="BSwitch4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
 				<Value type="bool" genre="user" instance="5" index="0" label="BSwitch5" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
 				<Value type="bool" genre="user" instance="6" index="0" label="BSwitct6" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
-				<Value type="bool" genre="user" instance="7" index="0" label="BSwitch7" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True" />
-				<Value type="bool" genre="user" instance="8" index="0" label="BSwitch8" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True" />
+				<Value type="bool" genre="user" instance="7" index="0" label="BSwitch7" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
+				<Value type="bool" genre="user" instance="8" index="0" label="BSwitch8" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
 			</CommandClass>
 			<CommandClass id="37" name="COMMAND_CLASS_SWITCH_BINARY" version="1">
 				<Instance index="1" />
 				<Instance index="2" endpoint="6" />
 				<Instance index="3" endpoint="7" />
-				<Value type="bool" genre="user" instance="1" index="0" label="Switch1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True" />
+				<Value type="bool" genre="user" instance="1" index="0" label="Switch1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
 				<Value type="bool" genre="user" instance="2" index="0" label="Switch2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
 				<Value type="bool" genre="user" instance="3" index="0" label="Switch3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
-	
 			</CommandClass>
 			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="1" request_flags="1" after_mark="true" innif="true">
 				<Instance index="1" />
@@ -733,26 +732,23 @@
 					<Item label="Medium (30 min)" value="1" />
 					<Item label="Long (60 min) (default)" value="2" />
 				</Value>
-                <Value type="list" genre="config" instance="2" index="0" label="Termostat 1 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+				<Value type="list" genre="config" instance="2" index="1" label="Termostat 1 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
 					<Item label="No heat" value="0" />
 					<Item label="Heat enabled" value="255" />
 				</Value>
-				<Value type="list" genre="config" instance="3" index="0" label="Termostat 2 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+				<Value type="bool" genre="config" instance="3" index="1" label="Termostat 2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
+				<Value type="list" genre="config" instance="4" index="1" label="Termostat 3 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
 					<Item label="No heat" value="0" />
 					<Item label="Heat enabled" value="255" />
 				</Value>
-				<Value type="list" genre="config" instance="4" index="0" label="Termostat 3 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
-					<Item label="No heat" value="0" />
-					<Item label="Heat enabled" value="255" />
-				</Value>
-				<Value type="list" genre="config" instance="5" index="0" label="Termostat 4 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+				<Value type="list" genre="config" instance="5" index="1" label="Termostat 4 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
 					<Item label="No heat" value="0" />
 					<Item label="Heat enabled" value="255" />
 				</Value>
 				<Value type="list" genre="config" instance="6" index="1" label="Termostat 5 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
 					<Item label="No heat" value="0" />
 					<Item label="Heat enabled" value="255" />
-				</Value>  
+				</Value>
 			</CommandClass>
 			<CommandClass id="113" name="COMMAND_CLASS_ALARM" version="7" request_flags="1" innif="true">
 				<Instance index="1" />
