@@ -2,6 +2,9 @@
     friendly_name: Alle kontakter
     hidden: false
 
+  switch.everspring_an180_plugin_onoff_module_switch:
+    friendly_name: Stue kontakt
+    
   sensor.aeotec_zw100_multisensor_6_temperature:
     friendly_name: Soveværelse Temperatur
     icon: mdi:temperature:celsius
