@@ -723,7 +723,7 @@
 					<Item label="Normally closed (default)" value="0" />
 					<Item label="Normally open" value="1" />
 				</Value>
-				<Value type="list" genre="config" instance="1" index="2" label="Heat Load Strategy" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" vindex="0" size="1">
+				<Value type="list" genre="config" instance="1" index="2" label="Heat Load Strategy" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" vindex="1" size="1">
 					<Item label="Stacking (default)" value="0" />
 					<Item label="Spreading" value="1" />
 				</Value>
@@ -732,20 +732,20 @@
 					<Item label="Medium (30 min)" value="1" />
 					<Item label="Long (60 min) (default)" value="2" />
 				</Value>
-				<Value type="list" genre="config" instance="2" index="1" label="Termostat 1 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+				<Value type="list" genre="config" instance="2" index="4" label="Termostat 1 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
 					<Item label="No heat" value="0" />
 					<Item label="Heat enabled" value="255" />
 				</Value>
-				<Value type="bool" genre="config" instance="3" index="1" label="Termostat 2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
-				<Value type="list" genre="config" instance="4" index="1" label="Termostat 3 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+				<Value type="bool" genre="config" instance="3" index="5" label="Termostat 2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
+				<Value type="list" genre="config" instance="4" index="6" label="Termostat 3 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
 					<Item label="No heat" value="0" />
 					<Item label="Heat enabled" value="255" />
 				</Value>
-				<Value type="list" genre="config" instance="5" index="1" label="Termostat 4 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+				<Value type="list" genre="config" instance="5" index="7" label="Termostat 4 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
 					<Item label="No heat" value="0" />
 					<Item label="Heat enabled" value="255" />
 				</Value>
-				<Value type="list" genre="config" instance="6" index="1" label="Termostat 5 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+				<Value type="list" genre="config" instance="6" index="8" label="Termostat 5 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
 					<Item label="No heat" value="0" />
 					<Item label="Heat enabled" value="255" />
 				</Value>
