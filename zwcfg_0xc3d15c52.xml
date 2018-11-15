@@ -27,7 +27,7 @@
 			</CommandClass>
 			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="5" innif="true">
 				<Instance index="1" />
-				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="C" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="23.0" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="C" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="22.9" />
 				<Value type="decimal" genre="user" instance="1" index="3" label="Luminance" units="lux" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="0" />
 				<Value type="decimal" genre="user" instance="1" index="5" label="Relative Humidity" units="%" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="44" />
 				<Value type="decimal" genre="user" instance="1" index="27" label="Ultraviolet" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="0" />
@@ -622,44 +622,45 @@
 			<Product type="2" id="4005" name="Unknown: type=0002, id=4005" />
 		</Manufacturer>
 		<CommandClasses>
-    <!--0020 BASIC -->
-            <CommandClass id="32" name="COMMAND_CLASS_BASIC">
-                <Value type="list" index="2" genre="config" label="Termostat 1 mode" units="" min="0" max="255" value="0" size="1">
-                    <Item label="No heat" value="0" />
-                    <Item label="Heat enabled" value="255" />
-                </Value>
-                <Value type="list" index="3" genre="config" label="Termostat 2 mode" units="" min="0" max="255" value="0" size="1">
-                    <Item label="No heat" value="0" />
-                    <Item label="Heat enabled" value="255" />
-                </Value>
-                <Value type="list" index="4" genre="config" label="Termostat 3 mode" units="" min="0" max="255" value="0" size="1">
-                    <Item label="No heat" value="0" />
-                    <Item label="Heat enabled" value="255" />
-                </Value>
-                <Value type="list" index="5" genre="config" label="Termostat 4 mode" units="" min="0" max="255" value="0" size="1">
-                    <Item label="No heat" value="0" />
-                    <Item label="Heat enabled" value="255" />
-                </Value>
-                <Value type="list" index="6" genre="config" label="Termostat 5 mode" units="" min="0" max="255" value="0" size="1">
-                    <Item label="No heat" value="0" />
-                    <Item label="Heat enabled" value="255" />
-                </Value>
-            </CommandClass>
-            <!--0025 SWITCH_BINARY -->
-            <CommandClass id="37" name="COMMAND_CLASS_SWITCH_BINARY">
-                <Value type="list" index="1" genre="config" label="Termostats" units="" min="0" max="255" value="0" size="1">
-                    <Item label="OFF" value="0" />
-                    <Item label="ON" value="255" />
-                </Value>
-                <Value type="list" index="2" genre="config" label="Water pump" units="" min="0" max="255" value="0" size="1">
-                    <Item label="OFF" value="0" />
-                    <Item label="ON" value="255" />
-                </Value>
-                <Value type="list" index="3" genre="config" label="Water heater" units="" min="0" max="255" value="0" size="1">
-                    <Item label="OFF" value="0" />
-                    <Item label="ON" value="255" />
-                </Value>
-            </CommandClass>
+			<CommandClass id="32" name="COMMAND_CLASS_BASIC" version="1">
+				<Instance index="1" />
+				<Value type="list" genre="config" instance="1" index="2" label="Termostat 1 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+					<Item label="No heat" value="0" />
+					<Item label="Heat enabled" value="255" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="3" label="Termostat 2 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+					<Item label="No heat" value="0" />
+					<Item label="Heat enabled" value="255" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="4" label="Termostat 3 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+					<Item label="No heat" value="0" />
+					<Item label="Heat enabled" value="255" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="5" label="Termostat 4 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+					<Item label="No heat" value="0" />
+					<Item label="Heat enabled" value="255" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="6" label="Termostat 5 mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+					<Item label="No heat" value="0" />
+					<Item label="Heat enabled" value="255" />
+				</Value>
+			</CommandClass>
+			<CommandClass id="37" name="COMMAND_CLASS_SWITCH_BINARY" version="1">
+				<Instance index="1" />
+				<Value type="bool" genre="user" instance="1" index="0" label="Switch" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True" />
+				<Value type="list" genre="config" instance="1" index="1" label="Termostats" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+					<Item label="OFF" value="0" />
+					<Item label="ON" value="255" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="2" label="Water pump" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+					<Item label="OFF" value="0" />
+					<Item label="ON" value="255" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="3" label="Water heater" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
+					<Item label="OFF" value="0" />
+					<Item label="ON" value="255" />
+				</Value>
+			</CommandClass>
 			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="1" request_flags="1" after_mark="true" innif="true">
 				<Instance index="1" />
 				<Instance index="2" endpoint="1" />
@@ -724,22 +725,22 @@
 			<CommandClass id="96" name="COMMAND_CLASS_MULTI_INSTANCE/CHANNEL" version="3" request_flags="1" innif="true">
 				<Instance index="1" />
 			</CommandClass>
-            <!--0070 CONFIGURATION -->
-            <CommandClass id="112" name="COMMAND_CLASS_CONFIGURATION">
-                <Value type="list" index="1" genre="config" label="Valve type" units="" min="0" max="1" value="0" size="1">
-                    <Item label="Normally closed (default)" value="0" />
-                    <Item label="Normally open" value="1" />
-                </Value>
-                <Value type="list" index="2" genre="config" label="Heat Load Strategy" units="" min="0" max="1" value="0" size="1">
-                    <Item label="Stacking (default)" value="0" />
-                    <Item label="Spreading" value="1" />
-                </Value>
-                <Value type="list" index="3" genre="config" label="PWM period" units="" min="0" max="1" value="2" size="1">
-                    <Item label="Short (15 min)" value="0" />
-                    <Item label="Medium (30 min)" value="1" />
-                    <Item label="Long (60 min) (default)" value="2" />
-                </Value>
-            </CommandClass>
+			<CommandClass id="112" name="COMMAND_CLASS_CONFIGURATION" version="1">
+				<Instance index="1" />
+				<Value type="list" genre="config" instance="1" index="1" label="Valve type" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" vindex="1" size="1">
+					<Item label="Normally closed (default)" value="0" />
+					<Item label="Normally open" value="1" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="2" label="Heat Load Strategy" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" vindex="0" size="1">
+					<Item label="Stacking (default)" value="0" />
+					<Item label="Spreading" value="1" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="3" label="PWM period" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" vindex="2" size="1">
+					<Item label="Short (15 min)" value="0" />
+					<Item label="Medium (30 min)" value="1" />
+					<Item label="Long (60 min) (default)" value="2" />
+				</Value>
+			</CommandClass>
 			<CommandClass id="113" name="COMMAND_CLASS_ALARM" version="7" request_flags="1" innif="true">
 				<Instance index="1" />
 				<Instance index="2" endpoint="1" />
