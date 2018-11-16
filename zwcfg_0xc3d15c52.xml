@@ -666,8 +666,8 @@
 				<Value type="list" genre="user" instance="3" index="0" label="Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
 					<Item label="Off" value="0" />
 					<Item label="Heat" value="1" />
-                    <Item label="255" value="255" />
-                    <Item label="-1" value="-1" />
+					<Item label="255" value="255" />
+					<Item label="-1" value="-1" />
 				</Value>
 				<Value type="list" genre="user" instance="4" index="0" label="Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
 					<Item label="Off" value="0" />
