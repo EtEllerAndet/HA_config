@@ -653,7 +653,7 @@
 				<Value type="bool" genre="user" instance="5" index="0" label="Switch5_0" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
 				<Value type="bool" genre="user" instance="6" index="0" label="Switch6_0" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
 				<Value type="bool" genre="user" instance="7" index="0" label="Switch7_0" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True" />
-				<Value type="bool" genre="user" instance="8" index="0" label="Switch8_0" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True" />
+				<Value type="bool" genre="user" instance="8" index="0" label="Pump" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True" />
 			</CommandClass>
 			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="1" request_flags="1" after_mark="true" innif="true">
 				<Instance index="1" />
@@ -734,24 +734,24 @@
 					<Item label="Stacking (default)" value="0" />
 					<Item label="Spreading" value="1" />
 				</Value>
-				<Value type="list" genre="config" instance="2" index="3" label="PWM period" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" vindex="2" size="1">
+				<Value type="list" genre="config" instance="1" index="3" label="PWM period" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" vindex="2" size="1">
 					<Item label="Short (15 min)" value="0" />
 					<Item label="Medium (30 min)" value="1" />
 					<Item label="Long (60 min) (default)" value="2" />
 				</Value>
-				<Value type="list" genre="config" instance="3" index="0" label="test0" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+				<Value type="list" genre="config" instance="1" index="0" label="test0" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
 					<Item label="0" value="0" />
 					<Item label="1" value="1" />
 					<Item label="-1" value="-1" />
 					<Item label="255" value="255" />
 				</Value>
-				<Value type="list" genre="config" instance="3" index="4" label="test4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+				<Value type="list" genre="config" instance="1" index="4" label="test4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
 					<Item label="0" value="0" />
 					<Item label="1" value="1" />
 					<Item label="-1" value="-1" />
 					<Item label="255" value="255" />
 				</Value>
-				<Value type="list" genre="config" instance="3" index="5" label="test4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+				<Value type="list" genre="config" instance="1" index="5" label="test5" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
 					<Item label="0" value="0" />
 					<Item label="1" value="1" />
 					<Item label="-1" value="-1" />
