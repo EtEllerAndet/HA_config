@@ -22,6 +22,9 @@ frontend:
 # Enables configuration UI
 config:
 
+climate:
+  - platform: zwave
+
 http:
   # Secrets are defined in the file secrets.yaml
   base_url: !secret http_url
