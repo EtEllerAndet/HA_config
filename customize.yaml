@@ -45,5 +45,4 @@ sensor.temperature_158d0002387904:
 sensor.humidity_158d0002387904:
   friendly_name: Bad Fugtighed
   unit_of_measurement: '%'
-climate.danfoss_unknown_type_0002_id_4005_cooling_1_6:
-  current_temperature: 22
+climate.danfoss_unknown_type_0002_id_4005_cooling_1_6: {}
