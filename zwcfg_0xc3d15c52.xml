@@ -27,7 +27,7 @@
 			</CommandClass>
 			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="5" innif="true">
 				<Instance index="1" />
-				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="F" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="71.6" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="C" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="22.0" />
 				<Value type="decimal" genre="user" instance="1" index="3" label="Luminance" units="lux" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="0" />
 				<Value type="decimal" genre="user" instance="1" index="5" label="Relative Humidity" units="%" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="37" />
 				<Value type="decimal" genre="user" instance="1" index="27" label="Ultraviolet" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="0" />
@@ -637,9 +637,18 @@
 				<Instance index="1" />
 				<Instance index="2" endpoint="6" />
 				<Instance index="3" endpoint="7" />
-				<Value type="bool" genre="user" instance="1" index="0" label="Switch" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True" />
-				<Value type="bool" genre="user" instance="2" index="0" label="Switch 5" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True" />
-				<Value type="bool" genre="user" instance="3" index="0" label="Pump" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True" />
+                <Value type="list" genre="user" instance="1" index="0" label="Switch" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+				<Item label="Off" value="0" />
+				<Item label="Heating" value="255" />
+				</Value>
+                <Value type="list" genre="user" instance="2" index="0" label="Switch 5" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+				<Item label="Off" value="0" />
+				<Item label="Heating" value="255" />
+				</Value>
+                <Value type="list" genre="user" instance="3" index="0" label="Pump" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+				<Item label="Off" value="0" />
+				<Item label="On" value="255" />
+				</Value>
 			</CommandClass>
 			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="1" request_flags="1" after_mark="true" innif="true">
 				<Instance index="1" />
@@ -656,7 +665,7 @@
 				<Instance index="4" endpoint="3" />
 				<Instance index="5" endpoint="4" />
 				<Instance index="6" endpoint="5" />
-				<Value type="list" genre="user" instance="1" index="0" label="Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="1" size="1">
+				<Value type="list" genre="user" instance="1" index="0" label="Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
 					<Item label="Off" value="0" />
 					<Item label="Heat" value="1" />
 				</Value>
@@ -712,7 +721,7 @@
 				<Instance index="4" endpoint="3" />
 				<Instance index="5" endpoint="4" />
 				<Instance index="6" endpoint="5" />
-				<Value type="list" genre="config" instance="1" index="1" label="Valve type" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" vindex="1" size="1">
+				<Value type="list" genre="config" instance="1" index="1" label="Valve type" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" vindex="0" size="1">
 					<Item label="Normally closed (default)" value="0" />
 					<Item label="Normally open" value="1" />
 				</Value>
