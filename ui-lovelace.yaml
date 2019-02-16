@@ -31,7 +31,9 @@ views:
         card:
           type: glance
           title: People that are home
-
+        card:
+          type: thermostat
+          title: climate.danfoss_unknown_type_0002_id_4005_cooling_1_6
         # The picture entity card will represent an entity with a picture
       - type: picture-entity
         image: https://www.home-assistant.io/images/default-social.png
