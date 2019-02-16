@@ -1,62 +1,49 @@
-  group.all_switches:
-    friendly_name: Alle kontakter
-    hidden: false
-
-  switch.everspring_an180_plugin_onoff_module_switch:
-    friendly_name: Stue kontakt
-    
-  sensor.aeotec_zw100_multisensor_6_temperature:
-    friendly_name: Soveværelse Temperatur
-    icon: mdi:temperature:celsius
-    unit_of_measurement: °C
-
-  sensor.aeotec_zw100_multisensor_6_relative_humidity:
-    friendly_name: Soveværelse Fugtighed
-    unit_of_measurement: "%"
-
-#Xiaomi Mi
-#1
-  sensor.temperature_158d0002327f41:
-    friendly_name: Køkken2 Temperatur
-    icon: mdi:temperature:celsius
-    unit_of_measurement: °C
-
-  sensor.humidity_158d0002327f41:
-    friendly_name: Køkken2 Fugtighed
-    unit_of_measurement: "%"
-#2
-  sensor.temperature_158d0002327fc1:
-    friendly_name: Soveværelse2 Temperatur
-    icon: mdi:temperature:celsius
-    unit_of_measurement: °C
-
-  sensor.humidity_158d0002327fc1:
-    friendly_name: Soveværelse2 Fugtighed
-    unit_of_measurement: "%"
-#3
-  sensor.temperature_158d00023878da:
-    friendly_name: Køkken Temperatur
-    icon: mdi:temperature:celsius
-    unit_of_measurement: °C
-
-  sensor.humidity_158d00023878da:
-    friendly_name: Køkken Fugtighed
-    unit_of_measurement: "%"
-#4
-  sensor.temperature_158d000237e716:
-    friendly_name: Kontor Temperatur
-    icon: mdi:temperature:celsius
-    unit_of_measurement: °C
-
-  sensor.humidity_158d000237e716:
-    friendly_name: Kontor Fugtighed
-    unit_of_measurement: "%"
-#5
-  sensor.temperature_158d0002387904:
-    friendly_name: Bad Temperatur
-    icon: mdi:temperature:celsius
-    unit_of_measurement: °C
-
-  sensor.humidity_158d0002387904:
-    friendly_name: Bad Fugtighed
-    unit_of_measurement: "%"
+group.all_switches:
+  friendly_name: Alle kontakter
+  hidden: false
+switch.everspring_an180_plugin_onoff_module_switch:
+  friendly_name: Stue kontakt
+sensor.aeotec_zw100_multisensor_6_temperature:
+  friendly_name: Soveværelse Temperatur
+  icon: mdi:temperature:celsius
+  unit_of_measurement: °C
+sensor.aeotec_zw100_multisensor_6_relative_humidity:
+  friendly_name: Soveværelse Fugtighed
+  unit_of_measurement: '%'
+sensor.temperature_158d0002327f41:
+  friendly_name: Køkken2 Temperatur
+  icon: mdi:temperature:celsius
+  unit_of_measurement: °C
+sensor.humidity_158d0002327f41:
+  friendly_name: Køkken2 Fugtighed
+  unit_of_measurement: '%'
+sensor.temperature_158d0002327fc1:
+  friendly_name: Soveværelse2 Temperatur
+  icon: mdi:temperature:celsius
+  unit_of_measurement: °C
+sensor.humidity_158d0002327fc1:
+  friendly_name: Soveværelse2 Fugtighed
+  unit_of_measurement: '%'
+sensor.temperature_158d00023878da:
+  friendly_name: Køkken Temperatur
+  icon: mdi:temperature:celsius
+  unit_of_measurement: °C
+sensor.humidity_158d00023878da:
+  friendly_name: Køkken Fugtighed
+  unit_of_measurement: '%'
+sensor.temperature_158d000237e716:
+  friendly_name: Kontor Temperatur
+  icon: mdi:temperature:celsius
+  unit_of_measurement: °C
+sensor.humidity_158d000237e716:
+  friendly_name: Kontor Fugtighed
+  unit_of_measurement: '%'
+sensor.temperature_158d0002387904:
+  friendly_name: Bad Temperatur
+  icon: mdi:temperature:celsius
+  unit_of_measurement: °C
+sensor.humidity_158d0002387904:
+  friendly_name: Bad Fugtighed
+  unit_of_measurement: '%'
+climate.danfoss_unknown_type_0002_id_4005_cooling_1_6:
+  current_temperature: 22
