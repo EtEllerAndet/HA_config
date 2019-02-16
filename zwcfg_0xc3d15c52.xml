@@ -699,34 +699,12 @@
 				<Instance index="4" endpoint="3" />
 				<Instance index="5" endpoint="4" />
 				<Instance index="6" endpoint="5" />
-                <Value type="list" genre="user" instance="1" index="0" label="heating root" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
-					<Item label="No heating" value="0" />
-					<Item label="Heating" value="255" />
-				</Value>
-                <Value type="list" genre="user" instance="2" index="0" label="heating 1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
-					<Item label="No heating" value="0" />
-					<Item label="Heating" value="255" />
-				</Value>
-                <Value type="list" genre="user" instance="3" index="0" label="heating 2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
-					<Item label="No heating" value="0" />
-					<Item label="Heating" value="255" />
-				</Value>
-                <Value type="list" genre="user" instance="4" index="0" label="heating 3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
-					<Item label="No heating" value="0" />
-					<Item label="Heating" value="255" />
-				</Value>
-                <Value type="list" genre="user" instance="5" index="0" label="heating 4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
-					<Item label="No heating" value="0" />
-					<Item label="Heating" value="255" />
-				</Value>
-                <Value type="list" genre="user" instance="6" index="0" label="heating 5" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="0" size="1">
-					<Item label="No heating" value="0" />
-					<Item label="Heating" value="255" />
-				</Value>
-                <SupportedModes>
-					<Mode index="0" label="No heating" />
-					<Mode index="1" label="Heating" />
-				</SupportedModes>
+				<Value type="byte" genre="user" instance="1" index="1" label="set 0" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="255" />
+				<Value type="byte" genre="user" instance="2" index="1" label="set 1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="255" />
+				<Value type="byte" genre="user" instance="3" index="1" label="set 2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="255" />
+				<Value type="byte" genre="user" instance="4" index="1" label="set 3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="255" />
+				<Value type="byte" genre="user" instance="5" index="1" label="set 4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="255" />
+				<Value type="byte" genre="user" instance="6" index="1" label="set 5" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="255" />
 			</CommandClass>
 			<CommandClass id="90" name="COMMAND_CLASS_DEVICE_RESET_LOCALLY" version="1" request_flags="5" innif="true">
 				<Instance index="1" />
