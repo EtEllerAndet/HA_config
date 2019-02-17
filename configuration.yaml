@@ -98,7 +98,8 @@ history_graph:
 logbook:
 
 logger:
-  default: critical
+#  default: critical
+  default: info
   logs:
     homeassistant.components.history: debug
     homeassistant.components.recorder: debug

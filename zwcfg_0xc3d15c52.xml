@@ -28,7 +28,7 @@
 			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="5" innif="true">
 				<Instance index="1" />
 				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="C" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="21.5" />
-				<Value type="decimal" genre="user" instance="1" index="3" label="Luminance" units="lux" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="0" />
+				<Value type="decimal" genre="user" instance="1" index="3" label="Luminance" units="lux" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="1" />
 				<Value type="decimal" genre="user" instance="1" index="5" label="Relative Humidity" units="%" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="40" />
 				<Value type="decimal" genre="user" instance="1" index="27" label="Ultraviolet" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="0" />
 			</CommandClass>
@@ -648,10 +648,10 @@
 				<Instance index="4" endpoint="3" />
 				<Instance index="5" endpoint="4" />
 				<Instance index="6" endpoint="5" />
-                <Value type="decimal" genre="user" instance="2" index="0" label="Temperature 1" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="100" value="0" />
-                <Value type="decimal" genre="user" instance="3" index="0" label="Temperature 2" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="100" value="0" />
-                <Value type="decimal" genre="user" instance="4" index="0" label="Temperature 3" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="100" value="0" />
-                <Value type="decimal" genre="user" instance="5" index="0" label="Temperature 4" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="100" value="0" />
+				<Value type="decimal" genre="user" instance="2" index="0" label="Temperature 1" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="100" value="0" />
+				<Value type="decimal" genre="user" instance="3" index="0" label="Temperature 2" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="100" value="0" />
+				<Value type="decimal" genre="user" instance="4" index="0" label="Temperature 3" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="100" value="0" />
+				<Value type="decimal" genre="user" instance="5" index="0" label="Temperature 4" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="100" value="0" />
 				<Value type="decimal" genre="user" instance="6" index="0" label="Temperature 5" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="100" value="0" />
 			</CommandClass>
 			<CommandClass id="64" name="COMMAND_CLASS_THERMOSTAT_MODE" version="1" request_flags="5" innif="true">
@@ -681,7 +681,7 @@
 					<Item label="Off" value="0" />
 					<Item label="Heat" value="1" />
 				</Value>
-				<Value type="list" genre="user" instance="6" index="0" label="Mode 5" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+				<Value type="list" genre="user" instance="6" index="0" label="Mode 5" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="1" size="1">
 					<Item label="Off" value="0" />
 					<Item label="Heat" value="1" />
 				</Value>
