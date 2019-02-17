@@ -5,13 +5,12 @@ trigger:
     - sensor.temperatur_5_xi
     - climate.danfoss_floorheater_target_5
 action:
-  service: climate.set_temperature
+  service: climate.set_operation_mode
   data_template:
     entity_id: "climate.danfoss_floorheater_target_5"
-    temperature: "{{ (states('sensor.temperatur_5_xi') | float) }}"
-    operation_mode: >-
-      {% if (('sensor.temperatur_5_xi') | float) < (states('climate.danfoss_floorheater_target_5.attributes.temperature') | float) %}
-        Heat
+    operation_mode: >
+      {% if (states('sensor.temperatur_5_xi') | float) < (states('climate.danfoss_floorheater_target_5.attributes.temperature') | float) %}
+        "Heat"
       {% else %}
-        Off
+        "Off"
       {% endif %}
