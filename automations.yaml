@@ -1,6 +1,6 @@
 alias: Varmestyring 5
 trigger:
-  platform: numeric_state
+  platform: state
   entity_id: 
     - sensor.temperatur_5_xi
     - climate.danfoss_floorheater_target_5
@@ -8,10 +8,10 @@ action:
   service: climate.set_temperature
   data_template:
     entity_id: "climate.danfoss_floorheater_target_5"
-    temperature: "{{ states('sensor.temperatur_5_xi') }}"
+    temperature: "{{ (states('sensor.temperatur_5_xi') | float) }}"
     operation_mode: >-
-      {% if states('sensor.temperatur_5_xi') | float < states('climate.danfoss_floorheater_target_5.attributes.temperature') | float %}
+      {% if (('sensor.temperatur_5_xi') | float) < (states('climate.danfoss_floorheater_target_5.attributes.temperature') | float) %}
         Heat
       {% else %}
         Off
-      {%endif %}
+      {% endif %}
