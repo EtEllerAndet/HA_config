@@ -98,12 +98,12 @@ history_graph:
 logbook:
 
 logger:
-#  default: critical
-  default: info
+  default: critical
+#  default: info
   logs:
     homeassistant.components.history: debug
     homeassistant.components.recorder: debug
-    homeassistant.components.python_scripts: debug
+    homeassistant.components.python_script: debug
 
 # Enables a map showing the location of tracked devices
 map:
