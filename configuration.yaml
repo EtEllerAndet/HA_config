@@ -104,7 +104,7 @@ logger:
     homeassistant.components.history: debug
     homeassistant.components.recorder: debug
     homeassistant.components.python_script: debug
-
+    homeassistant.components.automation: debug
 # Enables a map showing the location of tracked devices
 map:
 
