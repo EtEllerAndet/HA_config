@@ -7,8 +7,8 @@
 *.txt
 *.log
 *.db
-.storage
 .cloud
+.storage
 .google.token
 ip_bans.yaml
 secrets.yaml
