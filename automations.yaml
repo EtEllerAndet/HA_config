@@ -1,3 +1,71 @@
+alias: Varmestyring 1
+trigger:
+  platform: state
+  entity_id: 
+    - sensor.temperature_1_xi
+    - climate.danfoss_floorheater_target_1
+action:
+  service: climate.set_operation_mode
+  data_template:
+    entity_id: "climate.danfoss_floorheater_target_1"
+    operation_mode: >-
+      {% if (states('sensor.temperature_1_xi') | float) < (state_attr('climate.danfoss_floorheater_target_1','temperature') | float) %}
+        Heat
+      {% else %}
+        Off
+      {% endif %}
+
+alias: Varmestyring 2
+trigger:
+  platform: state
+  entity_id: 
+    - sensor.temperature_2_xi
+    - climate.danfoss_floorheater_target_2
+action:
+  service: climate.set_operation_mode
+  data_template:
+    entity_id: "climate.danfoss_floorheater_target_2"
+    operation_mode: >-
+      {% if (states('sensor.temperature_2_xi') | float) < (state_attr('climate.danfoss_floorheater_target_2','temperature') | float) %}
+        Heat
+      {% else %}
+        Off
+      {% endif %}
+
+alias: Varmestyring 3
+trigger:
+  platform: state
+  entity_id: 
+    - sensor.temperature_3_xi
+    - climate.danfoss_floorheater_target_3
+action:
+  service: climate.set_operation_mode
+  data_template:
+    entity_id: "climate.danfoss_floorheater_target_3"
+    operation_mode: >-
+      {% if (states('sensor.temperature_3_xi') | float) < (state_attr('climate.danfoss_floorheater_target_3','temperature') | float) %}
+        Heat
+      {% else %}
+        Off
+      {% endif %}
+
+alias: Varmestyring 4
+trigger:
+  platform: state
+  entity_id: 
+    - sensor.temperature_4_xi
+    - climate.danfoss_floorheater_target_4
+action:
+  service: climate.set_operation_mode
+  data_template:
+    entity_id: "climate.danfoss_floorheater_target_4"
+    operation_mode: >-
+      {% if (states('sensor.temperature_4_xi') | float) < (state_attr('climate.danfoss_floorheater_target_4','temperature') | float) %}
+        Heat
+      {% else %}
+        Off
+      {% endif %}
+
 alias: Varmestyring 5
 trigger:
   platform: state
