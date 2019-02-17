@@ -2,6 +2,7 @@
 !*.yaml
 !*.xml
 !.gitignore
+!python_scripts/*.py
 *.conf
 *.txt
 *.log
