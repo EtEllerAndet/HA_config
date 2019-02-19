@@ -1,5 +1,5 @@
-thermostat_id  = data.get('thermostat')
-sensor_id  = data.get('sensor')
+thermostat_id  = data.get('thermostat','')
+sensor_id  = data.get('sensor','')
 
 if thermostat_id != "" and sensor_id != "":
    sensor = hass.states.get(sensor_id)
