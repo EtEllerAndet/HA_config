@@ -14,7 +14,16 @@
           {% else %}
             Off
           {% endif %}
-
+  - alias: Varmestyring 1 opdater
+    trigger:
+      platform: time_pattern
+      minutes: 0
+    action:
+      service: climate.set_temperature
+      data_template:
+        entity_id: "climate.danfoss_floorheater_target_1"
+        temperature: "{{ state_attr('climate.danfoss_floorheater_target_1', 'temperature') | float }}"
+        
   - alias: Varmestyring 2
     trigger:
       platform: state
@@ -31,6 +40,15 @@
           {% else %}
             Off
           {% endif %}
+  - alias: Varmestyring 2 opdater
+    trigger:
+      platform: time_pattern
+      minutes: 0
+    action:
+      service: climate.set_temperature
+      data_template:
+        entity_id: "climate.danfoss_floorheater_target_2"
+        temperature: "{{ state_attr('climate.danfoss_floorheater_target_2', 'temperature') | float }}"
 
   - alias: Varmestyring 3
     trigger:
@@ -48,6 +66,15 @@
           {% else %}
             Off
           {% endif %}
+  - alias: Varmestyring 3 opdater
+    trigger:
+      platform: time_pattern
+      minutes: 0
+    action:
+      service: climate.set_temperature
+      data_template:
+        entity_id: "climate.danfoss_floorheater_target_3"
+        temperature: "{{ state_attr('climate.danfoss_floorheater_target_3', 'temperature') | float }}"
 
   - alias: Varmestyring 4
     trigger:
@@ -65,6 +92,15 @@
           {% else %}
             Off
           {% endif %}
+  - alias: Varmestyring 4 opdater
+    trigger:
+      platform: time_pattern
+      minutes: 0
+    action:
+      service: climate.set_temperature
+      data_template:
+        entity_id: "climate.danfoss_floorheater_target_4"
+        temperature: "{{ state_attr('climate.danfoss_floorheater_target_4', 'temperature') | float }}"
 
   - alias: Varmestyring 5
     trigger:
@@ -82,6 +118,15 @@
           {% else %}
             Off
           {% endif %}
+  - alias: Varmestyring 5 opdater
+    trigger:
+      platform: time_pattern
+      minutes: 0
+    action:
+      service: climate.set_temperature
+      data_template:
+        entity_id: "climate.danfoss_floorheater_target_5"
+        temperature: "{{ state_attr('climate.danfoss_floorheater_target_5', 'temperature') | float }}"
 
   - alias: 'Heating Update Current Temperature'
     trigger:
