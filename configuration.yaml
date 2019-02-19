@@ -155,6 +155,7 @@ sensor:
         friendly_name: "Gulvvarme 5"
         value_template: "{{ state_attr('climate.danfoss_floorheater_target_5', 'operation_mode') }}"
     sensors:
+
       danfoss_floorheater_target_temp_1:
         friendly_name: "Gulvvarme target 1"
         unit_of_measurement: 'degrees'
