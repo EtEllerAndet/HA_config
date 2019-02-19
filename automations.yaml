@@ -3,13 +3,13 @@
       platform: state
       entity_id: 
         - sensor.temperature_1_xi
-        - climate.danfoss_floorheater_target_1
+        - sensor.danfoss_floorheater_target_temp_1
     action:
       service: climate.set_operation_mode
       data_template:
         entity_id: "climate.danfoss_floorheater_target_1"
         operation_mode: >-
-          {% if (states('sensor.temperature_1_xi') | float) < (state_attr('climate.danfoss_floorheater_target_1','temperature') | float) %}
+          {% if (states('sensor.temperature_1_xi') | float) < (states('sensor.danfoss_floorheater_target_temp_1') | float) %}
             Heat
           {% else %}
             Off
@@ -20,13 +20,13 @@
       platform: state
       entity_id: 
         - sensor.temperature_2_xi
-        - climate.danfoss_floorheater_target_2
+        - sensor.danfoss_floorheater_target_temp_2
     action:
       service: climate.set_operation_mode
       data_template:
         entity_id: "climate.danfoss_floorheater_target_2"
         operation_mode: >-
-          {% if (states('sensor.temperature_2_xi') | float) < (state_attr('climate.danfoss_floorheater_target_2','temperature') | float) %}
+          {% if (states('sensor.temperature_2_xi') | float) < (states('sensor.danfoss_floorheater_target_temp_2') | float) %}
             Heat
           {% else %}
             Off
@@ -37,13 +37,13 @@
       platform: state
       entity_id: 
         - sensor.temperature_3_xi
-        - climate.danfoss_floorheater_target_3
+        - sensor.danfoss_floorheater_target_temp_3
     action:
       service: climate.set_operation_mode
       data_template:
         entity_id: "climate.danfoss_floorheater_target_3"
         operation_mode: >-
-          {% if (states('sensor.temperature_3_xi') | float) < (state_attr('climate.danfoss_floorheater_target_3','temperature') | float) %}
+          {% if (states('sensor.temperature_3_xi') | float) < (states('sensor.danfoss_floorheater_target_temp_3') | float) %}
             Heat
           {% else %}
             Off
@@ -54,13 +54,13 @@
       platform: state
       entity_id: 
         - sensor.temperature_4_xi
-        - climate.danfoss_floorheater_target_4
+        - sensor.danfoss_floorheater_target_temp_4
     action:
       service: climate.set_operation_mode
       data_template:
         entity_id: "climate.danfoss_floorheater_target_4"
         operation_mode: >-
-          {% if (states('sensor.temperature_4_xi') | float) < (state_attr('climate.danfoss_floorheater_target_4','temperature') | float) %}
+          {% if (states('sensor.temperature_4_xi') | float) < (states('sensor.danfoss_floorheater_target_temp_4') | float) %}
             Heat
           {% else %}
             Off
@@ -71,14 +71,82 @@
       platform: state
       entity_id: 
         - sensor.temperature_5_xi
-        - climate.danfoss_floorheater_target_5
+        - sensor.danfoss_floorheater_target_temp_4
     action:
       service: climate.set_operation_mode
       data_template:
         entity_id: "climate.danfoss_floorheater_target_5"
         operation_mode: >-
-          {% if (states('sensor.temperature_5_xi') | float) < (state_attr('climate.danfoss_floorheater_target_5','temperature') | float) %}
+          {% if (states('sensor.temperature_5_xi') | float) < (states('sensor.danfoss_floorheater_target_temp_5') | float) %}
             Heat
           {% else %}
             Off
           {% endif %}
+
+  - alias: 'Heating Update Current Temperature'
+    trigger:
+      platform: state
+      entity_id:
+        - sensor.temperature_1_xi
+        - sensor.temperature_2_xi
+        - sensor.temperature_3_xi
+        - sensor.temperature_4_xi
+        - sensor.temperature_5_xi
+        - climate.danfoss_floorheater_target_1
+        - climate.danfoss_floorheater_target_2
+        - climate.danfoss_floorheater_target_3
+        - climate.danfoss_floorheater_target_4
+        - climate.danfoss_floorheater_target_5
+    condition:
+        condition: template
+        value_template: >-
+          {% if "danfoss" in trigger.entity_id and trigger.to_state.attributes.current_temperature == none %}
+             true
+          {% elif "temperature" in trigger.entity_id %}
+             true
+          {% else %}
+             false
+          {% endif %}
+    action:
+        service: python_script.thermostat_current_temp
+        data_template:
+          thermostat: >-
+             {% if "danfoss" in trigger.entity_id %}
+                {{ trigger.entity_id }}
+             {% else %}
+                climate.danfoss_floorheater_target_{{ trigger.entity_id | replace('sensor.temperature_', '') | replace('_xi', '') }}
+             {% endif %}
+          sensor: >-
+             {% if "temperature" in trigger.entity_id %}
+                {{ trigger.entity_id }}
+             {% else %}
+                sensor.temperature_{{ (trigger.entity_id | replace('climate.danfoss_floorheater_target_', '')) }}_xi
+             {% endif %}
+
+  - id: heating_update_current_temperature_at_start
+    alias: 'Heating Update Current Temperature At Start'
+    trigger:
+        platform: homeassistant
+        event: start
+    action:
+        - service: python_script.thermostat_current_temp
+          data:
+            thermostat: climate.danfoss_floorheater_target_1
+            sensor: sensor.temperature_1_xi
+        - service: python_script.thermostat_current_temp
+          data:
+            thermostat: climate.danfoss_floorheater_target_2
+            sensor: sensor.temperature_2_xi
+        - service: python_script.thermostat_current_temp
+          data:
+            thermostat: climate.danfoss_floorheater_target_3
+            sensor: sensor.temperature_3_xi
+        - service: python_script.thermostat_current_temp
+          data:
+            thermostat: climate.danfoss_floorheater_target_4
+            sensor: sensor.temperature_4_xi
+        - service: python_script.thermostat_current_temp
+          data:
+            thermostat: climate.danfoss_floorheater_target_5
+            sensor: sensor.temperature_5_xi
+

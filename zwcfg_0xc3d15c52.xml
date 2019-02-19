@@ -27,9 +27,9 @@
 			</CommandClass>
 			<CommandClass id="49" name="COMMAND_CLASS_SENSOR_MULTILEVEL" version="5" innif="true">
 				<Instance index="1" />
-				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="C" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="24.5" />
-				<Value type="decimal" genre="user" instance="1" index="3" label="Luminance" units="lux" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="11" />
-				<Value type="decimal" genre="user" instance="1" index="5" label="Relative Humidity" units="%" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="38" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Temperature" units="C" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="24.0" />
+				<Value type="decimal" genre="user" instance="1" index="3" label="Luminance" units="lux" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="6" />
+				<Value type="decimal" genre="user" instance="1" index="5" label="Relative Humidity" units="%" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="42" />
 				<Value type="decimal" genre="user" instance="1" index="27" label="Ultraviolet" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="0" />
 			</CommandClass>
 			<CommandClass id="90" name="COMMAND_CLASS_DEVICE_RESET_LOCALLY" version="1" request_flags="4" innif="true">
@@ -402,7 +402,7 @@
 			</CommandClass>
 			<CommandClass id="37" name="COMMAND_CLASS_SWITCH_BINARY" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
-				<Value type="bool" genre="user" instance="1" index="0" label="Switch" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
+				<Value type="bool" genre="user" instance="1" index="0" label="Switch" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True" />
 			</CommandClass>
 			<CommandClass id="39" name="COMMAND_CLASS_SWITCH_ALL" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -656,27 +656,27 @@
 				<Instance index="4" endpoint="3" />
 				<Instance index="5" endpoint="4" />
 				<Instance index="6" endpoint="5" />
-				<Value type="list" genre="user" instance="1" index="0" label="Mode 0" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="1" size="1">
+				<Value type="list" genre="user" instance="1" index="0" label="Mode 0" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
 					<Item label="Off" value="0" />
 					<Item label="Heat" value="1" />
 				</Value>
-				<Value type="list" genre="user" instance="2" index="0" label="Mode 1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="1" size="1">
+				<Value type="list" genre="user" instance="2" index="0" label="Mode 1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
 					<Item label="Off" value="0" />
 					<Item label="Heat" value="1" />
 				</Value>
-				<Value type="list" genre="user" instance="3" index="0" label="Mode 2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="1" size="1">
+				<Value type="list" genre="user" instance="3" index="0" label="Mode 2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
 					<Item label="Off" value="0" />
 					<Item label="Heat" value="1" />
 				</Value>
-				<Value type="list" genre="user" instance="4" index="0" label="Mode 3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="1" size="1">
+				<Value type="list" genre="user" instance="4" index="0" label="Mode 3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
 					<Item label="Off" value="0" />
 					<Item label="Heat" value="1" />
 				</Value>
-				<Value type="list" genre="user" instance="5" index="0" label="Mode 4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="1" size="1">
+				<Value type="list" genre="user" instance="5" index="0" label="Mode 4" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
 					<Item label="Off" value="0" />
 					<Item label="Heat" value="1" />
 				</Value>
-				<Value type="list" genre="user" instance="6" index="0" label="Mode 5" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="1" size="1">
+				<Value type="list" genre="user" instance="6" index="0" label="Mode 5" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
 					<Item label="Off" value="0" />
 					<Item label="Heat" value="1" />
 				</Value>
@@ -692,12 +692,12 @@
 				<Instance index="4" endpoint="3" />
 				<Instance index="5" endpoint="4" />
 				<Instance index="6" endpoint="5" />
-				<Value type="decimal" genre="user" instance="1" index="1" label="Target 0" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="30" value="24.00" />
-				<Value type="decimal" genre="user" instance="2" index="1" label="Target 1" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="30" value="24.00" />
-				<Value type="decimal" genre="user" instance="3" index="1" label="Target 2" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="30" value="23.00" />
-				<Value type="decimal" genre="user" instance="4" index="1" label="Target 3" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="30" value="24.00" />
-				<Value type="decimal" genre="user" instance="5" index="1" label="Target 4" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="30" value="24.00" />
-				<Value type="decimal" genre="user" instance="6" index="1" label="Target 5" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="30" value="25.00" />
+				<Value type="decimal" genre="user" instance="1" index="1" label="Target 0" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="30" value="22.00" />
+				<Value type="decimal" genre="user" instance="2" index="1" label="Target 1" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="30" value="22.00" />
+				<Value type="decimal" genre="user" instance="3" index="1" label="Target 2" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="30" value="22.00" />
+				<Value type="decimal" genre="user" instance="4" index="1" label="Target 3" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="30" value="22.00" />
+				<Value type="decimal" genre="user" instance="5" index="1" label="Target 4" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="30" value="22.00" />
+				<Value type="decimal" genre="user" instance="6" index="1" label="Target 5" units="C" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="30" value="22.00" />
 			</CommandClass>
 			<CommandClass id="90" name="COMMAND_CLASS_DEVICE_RESET_LOCALLY" version="1" request_flags="5" innif="true">
 				<Instance index="1" />

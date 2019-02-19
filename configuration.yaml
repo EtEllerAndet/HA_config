@@ -70,7 +70,7 @@ history_graph:
       - sensor.temperature_3_xi
       - sensor.temperature_4_xi
       - sensor.temperature_5_xi
-    hours_to_show: 168
+    hours_to_show: 24
     refresh: 60
 
   graf_fugtighed:
@@ -129,7 +129,60 @@ sensor:
       - type: memory_use_percent
       - type: disk_use_percent
         arg: /
-
+  - platform: template
+    sensors:
+      danfoss_floorheater_1:
+        friendly_name: "Gulvvarme 1"
+        value_template: "{{ state_attr('climate.danfoss_floorheater_target_1', 'operation_mode') }}"
+  - platform: template
+    sensors:
+      danfoss_floorheater_2:
+        friendly_name: "Gulvvarme 2"
+        value_template: "{{ state_attr('climate.danfoss_floorheater_target_2', 'operation_mode') }}"
+  - platform: template
+    sensors:
+      danfoss_floorheater_3:
+        friendly_name: "Gulvvarme 3"
+        value_template: "{{ state_attr('climate.danfoss_floorheater_target_3', 'operation_mode') }}"
+  - platform: template
+    sensors:
+      danfoss_floorheater_4:
+        friendly_name: "Gulvvarme 4"
+        value_template: "{{ state_attr('climate.danfoss_floorheater_target_4', 'operation_mode') }}"
+  - platform: template
+    sensors:
+      danfoss_floorheater_5:
+        friendly_name: "Gulvvarme 5"
+        value_template: "{{ state_attr('climate.danfoss_floorheater_target_5', 'operation_mode') }}"
+    sensors:
+      danfoss_floorheater_target_temp_1:
+        friendly_name: "Gulvvarme target 1"
+        unit_of_measurement: 'degrees'
+        value_template: "{{ state_attr('climate.danfoss_floorheater_target_1', 'temperature') | float }}"
+  - platform: template
+    sensors:
+      danfoss_floorheater_target_temp_2:
+        friendly_name: "Gulvvarme target 2"
+        unit_of_measurement: 'degrees'
+        value_template: "{{ state_attr('climate.danfoss_floorheater_target_2', 'temperature') | float }}"
+  - platform: template
+    sensors:
+      danfoss_floorheater_target_temp_3:
+        friendly_name: "Gulvvarme target 3"
+        unit_of_measurement: 'degrees'
+        value_template: "{{ state_attr('climate.danfoss_floorheater_target_3', 'temperature') | float }}"
+  - platform: template
+    sensors:
+      danfoss_floorheater_target_temp_4:
+        friendly_name: "Gulvvarme target 4"
+        unit_of_measurement: 'degrees'
+        value_template: "{{ state_attr('climate.danfoss_floorheater_target_4', 'temperature') | float }}"
+  - platform: template
+    sensors:
+      danfoss_floorheater_target_temp_5:
+        friendly_name: "Gulvvarme target 5"
+        unit_of_measurement: 'degrees'
+        value_template: "{{ state_attr('climate.danfoss_floorheater_target_5', 'temperature') | float }}"
 switch:
   - platform: wake_on_lan
     name: NAS
