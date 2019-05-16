@@ -23,7 +23,8 @@
     name: Stue
     entities:
       - switch.everspring_an180_plugin_onoff_module_switch
-      - switch.everspring_an179_in_wall_onoff_module_switch_2
+      - switch.fibaro_system_fgs223_double_relay_switch_2
+      - switch.fibaro_system_fgs223_double_relay_switch
       - history_graph.temperatur
 
   sovevaerelse:

@@ -114,6 +114,9 @@ sun:
 # IOS
 ios:
 
+shopping_list:
+
+
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
@@ -187,7 +190,8 @@ switch:
     broadcast_address: 192.168.1.255
 # Text to speech
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
 
 # Cloud
 cloud:
