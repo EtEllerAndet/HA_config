@@ -19,6 +19,9 @@ homeassistant:
 # Enables the frontend
 frontend:
 
+lovelace:
+  mode: yaml
+
 # Enables configuration UI
 config:
 
@@ -197,6 +200,10 @@ tts:
 cloud:
 
 upnp:
+
+weather:
+  - platform: darksky
+    api_key: !secret darksky_api_key
 
 #database
 recorder:

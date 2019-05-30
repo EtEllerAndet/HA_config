@@ -1,3 +1,4 @@
 group.all_switches:
   friendly_name: Alle kontakter
   hidden: false
+  control: hidden

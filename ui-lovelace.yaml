@@ -5,6 +5,8 @@ resources:
     type: js
   - url: /local/my-webfont.css
     type: css
+  - url: /local/group-card.js?v=2
+    type: js
 
 # Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
 background: center / cover no-repeat url("/background.png") fixed
@@ -12,52 +14,158 @@ background: center / cover no-repeat url("/background.png") fixed
 #excluded_entities:
 #  - weblink.router
 views:
-    # View tab title.
-  - title: Example
-    # Optional unique id for direct access /lovelace/${id}
-    id: example
-    # Optional background (overwrites the global background).
-    background: radial-gradient(crimson, skyblue)
-    # Each view can have a different theme applied. Theme should be defined in the frontend.
-    theme: dark-mode
-    # The cards to show on this view.
+  - title: Home 
+    icon: 'mdi:home'
+    path: home 
     cards:
-        # The filter card will filter entities for their state
-      - type: entity-filter
-        entities:
-          - device_tracker.christian
-        state_filter:
-          - 'home'
+#### WEATHER ####
+      - type: weather-forecast
+        entity: weather.dark_sky
+      - entities:
+          - entity: switch.everspring_an180_plugin_onoff_module_switch
+          - entity: switch.fibaro_system_fgs223_double_relay_switch_2
+          - entity: switch.fibaro_system_fgs223_double_relay_switch
+        show_header_toggle: true
+        title: Stue
+        type: entities
+      - entities:
+          - sensor.temperature_2_aeotec
+          - sensor.temperature_1_xi
+          - sensor.temperature_2_xi
+          - sensor.temperature_3_xi
+          - sensor.temperature_4_xi
+          - sensor.temperature_5_xi
+        hours_to_show: 168
+        refresh_interval: 60
+        title: Temperatur
+        type: history-graph
+      - entities:
+          - switch.everspring_an179_in_wall_onoff_module_switch
+        show_header_toggle: true
+        title: Soveværelse
+        type: entities
+      - type: custom:group-card
         card:
-          type: glance
-          title: People that are home
-        card:
-          type: thermostat
-          title: climate.danfoss_unknown_type_0002_id_4005_cooling_1_6
-        # The picture entity card will represent an entity with a picture
-      - type: picture-entity
-        image: https://www.home-assistant.io/images/default-social.png
-        entity: light.bed_light
-
-    # Specify a tab icon if you want the view tab to be an icon.
-  - icon: mdi:home-assistant
-    # Title of the view. Will be used as the tooltip for tab icon
-    title: Second view
+          type: entities
+          title: Kontakter
+        group: group.all_switches
+#
+  - title: Rasberry Pi Performance        
+    icon: 'mdi:raspberrypi'
+    path: rpi    
     cards:
-        # Entities card will take a list of entities and show their state.
-      - type: entities
-        # Title of the entities card
-        title: Example
-        # The entities here will be shown in the same order as specified.
-        # Each entry is an entity ID or a map with extra options.
-        entities:
-          - switch.everspring_an180_plugin_onoff_module_switch
-          - entity: switch.everspring_an179_in_wall_onoff_module_switch_2
-            # Override the name to use
-            name: LR Lights
-
-        # The markdown card will render markdown text.
-      - type: markdown
-        title: Lovelace
-        content: >
-          Welcome to your **Lovelace UI**.
+      - entities:
+          - sensor.processor_use
+          - sensor.memory_use_percent
+          - sensor.disk_use_percent_
+        hours_to_show: 168
+        refresh_interval: 60
+        title: Rasberry Pi
+        type: history-graph
+#
+  - title: Grafer
+    icon: 'mdi:chart-line'
+    path: grafer
+    card:
+      type: entities
+      title: Group card
+    group: group.all_switches
+    title: td
+    cards:
+      - entities:
+          - sensor.temperature_2_aeotec
+          - sensor.temperature_1_xi
+          - sensor.temperature_2_xi
+          - sensor.temperature_3_xi
+          - sensor.temperature_4_xi
+          - sensor.temperature_5_xi
+        hours_to_show: 168
+        refresh_interval: 60
+        title: Temperatur
+        type: history-graph
+      - entities:
+          - sensor.aeotec_zw100_multisensor_6_relative_humidity
+          - sensor.humidity_158d0002327f41
+          - sensor.humidity_158d0002327fc1
+          - sensor.humidity_158d000237e716
+          - sensor.humidity_158d00023878da
+          - sensor.humidity_158d0002387904
+        hours_to_show: 168
+        refresh_interval: 60
+        title: Fugtighed
+        type: history-graph
+#
+  - title: Gulvvarme
+    cards:
+      - entity: climate.danfoss_floorheater_target_3
+        name: Soveværelse
+        type: thermostat
+      - entity: climate.danfoss_floorheater_target_1
+        name: Kontor
+        theme: Backend-selected
+        type: thermostat
+      - entity: climate.danfoss_floorheater_target_4
+        name: Depot
+        type: thermostat
+      - entity: climate.danfoss_floorheater_target_2
+        name: Stue / Køkken
+        type: thermostat
+      - entity: climate.danfoss_floorheater_target_5
+        name: Badeværelse
+        type: thermostat
+#
+  - title: Gulvvarme grafer
+    cards:
+      - entities:
+          - sensor.danfoss_floorheater_1
+          - sensor.danfoss_floorheater_2
+          - sensor.danfoss_floorheater_3
+          - sensor.danfoss_floorheater_4
+          - sensor.danfoss_floorheater_5
+        gr1: null
+        hours_to_show: 168
+        refresh_interval: 60
+        title: Oversigt
+        type: history-graph
+      - entities:
+          - sensor.temperature_1_xi
+          - climate.danfoss_floorheater_target_1
+        gr1: null
+        hours_to_show: 24
+        refresh_interval: 60
+        title: Kontor
+        type: history-graph
+      - entities:
+          - sensor.temperature_2_xi
+          - sensor.temperature_2_aeotec
+          - climate.danfoss_floorheater_target_2
+        gr1: null
+        hours_to_show: 24
+        refresh_interval: 60
+        title: Stue/køkken
+        type: history-graph
+      - entities:
+          - sensor.temperature_3_xi
+          - climate.danfoss_floorheater_target_3
+        gr1: null
+        hours_to_show: 24
+        refresh_interval: 60
+        title: Soveværelse
+        type: history-graph
+      - entities:
+          - sensor.temperature_4_xi
+          - climate.danfoss_floorheater_target_4
+        gr1: null
+        hours_to_show: 24
+        refresh_interval: 60
+        title: Depot
+        type: history-graph
+      - entities:
+          - sensor.temperature_5_xi
+          - climate.danfoss_floorheater_target_5
+        gr1: null
+        hours_to_show: 24
+        refresh_interval: 60
+        title: Badeværelse
+        type: history-graph
+    panel: false
