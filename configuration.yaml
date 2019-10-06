@@ -20,7 +20,6 @@ homeassistant:
 frontend:
 
 lovelace:
-  mode: yaml
 
 # Enables configuration UI
 config:
@@ -35,7 +34,7 @@ http:
   base_url: !secret http_url
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
-  #api_password: !secret http_password
+  api_password: !secret http_password
   ip_ban_enabled: True 
   login_attempts_threshold: 15
 
@@ -205,6 +204,9 @@ weather:
   - platform: darksky
     api_key: !secret darksky_api_key
 
+hacs:
+  token: !secret hacs_token
+
 #database
 recorder:
   db_url: !secret recorder_db_url
@@ -212,6 +214,7 @@ recorder:
 # Z-wave
 zwave:
   usb_path: /dev/ttyACM0
+  network_key: !secret network_key 
 
 group: !include groups.yaml
 automation: !include automations.yaml
